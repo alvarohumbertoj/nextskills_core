@@ -1,0 +1,12 @@
+README.md
+setup.py
+nextskills_core/__init__.py
+nextskills_core/habilidades.py
+nextskills_core/riesgo.py
+nextskills_core.egg-info/PKG-INFO
+nextskills_core.egg-info/SOURCES.txt
+nextskills_core.egg-info/dependency_links.txt
+nextskills_core.egg-info/top_level.txt
+tests/__init__.py
+tests/test_habilidades.py
+tests/test_riesgo.py
