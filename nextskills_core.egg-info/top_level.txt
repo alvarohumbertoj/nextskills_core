@@ -1,2 +1,0 @@
-nextskills_core
-tests
