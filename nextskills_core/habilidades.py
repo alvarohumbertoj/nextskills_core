@@ -1,24 +1,17 @@
-# nextskills_core/habilidades.py
-
-HABILIDADES = {
-    "Python": "Programación",
-    "SQL": "Bases de Datos",
-    "Excel": "Herramientas",
-    "Machine Learning": "Inteligencia Artificial",
-    "Power BI": "Visualización de Datos"
-}
-
-COMPLEMENTARIAS = {
-    "Data Science": ["Python", "SQL", "Machine Learning"],
-    "Marketing Digital": ["SEO", "Google Ads", "Analytics"],
-    "Business Intelligence": ["Power BI", "Excel", "SQL"]
-}
+import re
 
 def clasificar_habilidad(habilidad):
-    return HABILIDADES.get(habilidad, "Otras")
+    habilidad = habilidad.lower().strip()
 
-def sugerir_habilidades(area):
-    return COMPLEMENTARIAS.get(area, [])
-
-def normalizar_habilidad(habilidad):
-    return habilidad.strip().lower().replace("-", " ").title()
+    if re.search(r'py|python|r\b|sql|scala', habilidad):
+        return 'Programación'
+    elif re.search(r'ia|inteligencia artificial|machine learning|deep learning', habilidad):
+        return 'Inteligencia Artificial'
+    elif re.search(r'power\s*bi|excel|tableau|looker|dashboards?', habilidad):
+        return 'Herramientas BI'
+    elif re.search(r'nube|azure|aws|gcp|cloud', habilidad):
+        return 'Cloud Computing'
+    elif re.search(r'gestion|scrum|kanban|jira', habilidad):
+        return 'Gestión de proyectos'
+    else:
+        return 'Otra'
